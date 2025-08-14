@@ -1,0 +1,131 @@
+:root{
+  --hp-deepblue:#0d3b66;     /* 主深蓝色 */
+  --accent-cyan:#00afb9;     /* 鲜明青色 */
+  --accent-orange:#ff6700;   /* 活力橙色 */
+  --accent-gold:#fcbf49;     /* 土黄色点缀 */
+  --bg:#f0f7f9;              /* 背景浅蓝灰 */
+  --text:#11203b;             /* 主文字色 */
+  --maxw:1100px;
+}
+
+/* Reset & Layout */
+*{box-sizing:border-box}
+body{
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  margin:0;
+  background: linear-gradient(180deg, #f0f7f9 0%, #ffffff 100%);
+  color:var(--text);
+  line-height:1.45;
+}
+
+.container{max-width:var(--maxw);margin:0 auto;padding:1rem}
+
+/* Header */
+.site-header{
+  border-bottom:4px solid var(--hp-deepblue);
+  background: linear-gradient(0deg, rgba(13,59,102,0.05), rgba(13,59,102,0.05));
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:0.6rem 0}
+
+.logo{height:100px;width:auto}
+
+.nav a{
+  color:var(--hp-deepblue);
+  text-decoration:none;
+  margin-left:1rem;
+  font-weight:600;
+  transition: color 0.3s;
+}
+.nav a:hover{color:var(--accent-cyan)}
+
+/* Hero Section */
+.hero{
+  padding:2.5rem 0;
+  background: linear-gradient(180deg, rgba(0,175,185,0.05), transparent);
+  text-align:center;
+  position: relative;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  top:0; left:0; right:0; bottom:0;
+  background: url('https://www.transparenttextures.com/patterns/diamond-upholstery.png') repeat;
+  opacity:0.07;  /* 纹理增强毛利文化感 */
+  pointer-events:none;
+}
+.hero-inner h1{font-size:2rem;margin:0 0 .4rem;color:var(--hp-deepblue)}
+.lead{max-width:720px;margin:0.6rem auto 1.2rem;color:#34515e}
+.btn{
+  display:inline-block;
+  padding:.6rem 1rem;
+  border-radius:6px;
+  background:var(--accent-cyan);
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+  transition: background 0.3s;
+}
+.btn:hover{background:var(--accent-orange)}
+
+/* Info Cards */
+.info .cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:1rem;
+  margin-top:1rem;
+  padding:0;
+  list-style:none;
+}
+.info .cards li{
+  background:#e3f6f5;
+  padding:1rem;
+  border-radius:8px;
+  border:1px solid rgba(13,59,102,0.1);
+  box-shadow:0 6px 18px rgba(17,32,59,0.05);
+}
+
+/* Hub Grid */
+.hub-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1rem;
+}
+.hub-grid article{
+  padding:1rem;
+  border-radius:8px;
+  border:1px solid rgba(13,59,102,0.1);
+  background:#d0f4f4;
+}
+
+/* Clubs */
+.clubs ul{padding-left:1.1rem}
+.clubs li{
+  background: var(--accent-cyan);
+  color:#fff;
+  padding:.6rem;
+  border-radius:6px;
+  margin-bottom:.4rem;
+  font-weight:600;
+  transition: background 0.3s, transform 0.2s;
+}
+.clubs li:hover{
+  background:var(--accent-orange);
+  transform:translateY(-2px);
+}
+
+/* Footer */
+.site-footer{
+  border-top:1px solid #cde0e6;
+  padding:1rem 0;
+  text-align:center;
+  color:#6b7f95;
+  font-size:.9rem;
+}
+
+/* Responsive */
+@media (max-width:720px){
+  .header-inner{flex-direction:column;gap:.6rem}
+  .nav a{margin-left:0;margin-right:.6rem}
+  .hub-grid{grid-template-columns:1fr}
+  .hero-inner h1{font-size:1.6rem}
+}
